@@ -4,8 +4,8 @@ function MultiParty(boundary) {
   else
     this.boundary = '---------------------------577900546148291341889429421';
 
-  this.body = 'Content-Type: multipart/form-data; boundary=' + this.boundary + '\r\n';
-  this.body += 'Content-Length: 81602\r\n\r\n';
+  this.body = 'Content-Type: multipart/form-data; boundary=' + this.boundary + '\r\n\r\n';
+  //this.body += 'Content-Length: 81602\r\n\r\n';
 }
 
 MultiParty.prototype.addParam = function(name, value) {
@@ -22,7 +22,7 @@ MultiParty.prototype.addFile = function(name, fileName, contentType, content) {
 };
 
 MultiParty.prototype.getBody = function() {
-  return this.body + '--' + this.boundary + '--\r\n';
+  return this.body + '--' + this.boundary + '--';
 };
 
 MultiParty.prototype.getContentTypeHeader = function() {
